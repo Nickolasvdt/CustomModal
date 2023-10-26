@@ -140,12 +140,12 @@ The modals can be closed by clicking the "Fechar" button or outside the modal.
 
 # Closing
 
-This modal component was created by Nickolas Vidoto. Feel free to adapt and modify it as needed to meet the specific requirements of your project.
+Feel free to adapt and modify it as needed to meet the specific requirements of your project.
 
 If you encounter issues or have suggestions for improvements, please feel free to contribute or get in touch.
 
 **Enjoy!**
 
 ## Author
-Created by [Seu Nome]
+Created by Nickolas Vidoto
 
