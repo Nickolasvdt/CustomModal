@@ -1,0 +1,91 @@
+#modalContainer {
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(18.06, 9.41, 9.41, 0.80) 0%, rgba(18.06, 9.41, 9.41, 0.80) 100%), radial-gradient(63.49% 63.49% at 39.47% 31.75%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 31%, rgba(0, 0, 0, 0.50) 76%), radial-gradient(40.65% 15.74% at 72.97% 9.43%, rgba(224, 46, 46, 0.20) 0%, rgba(0, 0, 0, 0) 48%), radial-gradient(42.20% 36.61% at 36.40% 23.60%, rgba(255, 255, 255, 0.60) 0%, rgba(0, 0, 0, 0) 67%);
+}
+
+#modalContainer {
+    .modal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 28.333vw;
+        /* height: 18.424vw; */
+        border-radius: 1.042vw;
+        border: 0.104vw solid rgba(234, 239, 243, 0.20);
+        background: rgba(21, 22, 25, 0.85);
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: -1.665vw;
+        height: 3.340vw;
+
+        & button {
+            width: 12.106vw;
+            height: 3.340vw;
+            border-radius: 0.885vw;
+            background: #51545B;
+
+            &:nth-child(2) {
+                margin-left: 0.893vw;
+            }
+
+            & p {
+                text-align: center;
+                font-family: GothamB;
+                font-size: 1.302vw;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0.05vw;
+                color: #EAEFF3;
+            }
+        }
+
+        .confirmationButton {
+            width: 13.776vw;
+        }
+
+        & button:hover {
+            background: var(--primary-color);
+        }
+    }
+
+    & img {
+        height: 5.772vw;
+        margin-top: 3.079vw;
+        margin-bottom: 1.566vw;
+    }
+
+    & .modal > p {
+        display: flex;
+        flex-direction: column;
+        max-width: 25.104vw;
+        padding-top: 0.05vw;
+        padding-bottom: 0.781vw;
+        text-align: center;
+        font-family: MontserratB;
+        font-size: 1.15vw;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.6vw;
+        margin-bottom: 3vw;
+        color: #EAEFF3;
+
+        & span {
+            font-family: MontserratX;
+            font-size: 1.2vw;
+        }
+    }
+}
