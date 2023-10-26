@@ -119,18 +119,20 @@ handleModal(true, 'confirmation', 'Confirmation Text', 'Additional Description',
 To open a simple success modal, call `handleModal` with the following parameters:
 
 ```javascript
-handleModal(true, 'success', 'Success Text');
+handleModal(true, 'success', 'Success Text', 'Description of modal');
 ```
 - `Success Text:` The text to be displayed in the modal.
+- `Description of modal:` Description text to be displayed in the modal.
 
 ### Error Modal
 
 To open a simple error modal, call `handleModal` with the following parameters:
 
 ```javascript
-handleModal(true, 'error', 'Error Text');
+handleModal(true, 'error', 'Error Text', 'Description of modal');
 ```
 - `Error Text:` The text to be displayed in the modal.
+- `Description of modal:` Description text to be displayed in the modal.
 
 ### Closing Modals
 
