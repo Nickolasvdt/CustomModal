@@ -4,61 +4,75 @@ import './styles.css'
 
 export default function CustomModal({ modalInfos, handleModal }) {
 
-    useEffect(() => {
-        // Função para fechar o modal quando clicar fora dele
-        const handleClickOutside = (event) => {
-            const modalContainer = document.getElementById('modal');
-            const buttons = document.getElementById('buttons');
+  const [modalInfos, setModalInfos] = useState({});
 
-            // Verifica se o clique foi fora do modal
-            if (modalContainer && !modalContainer.contains(event.target) && !buttons.contains(event.target)) {
-                handleModal(false);
-            }
-        };
+  function handleModal(handle, type, text, description, confirmation) {
+    if (handle) {
+      setModalInfos({
+        type: type,
+        text: <p>{text}{<span>{description}</span>}</p>,
+        confirmation: confirmation,
+      })
+    } else {
+      setModalInfos({})
+    }
+  }
 
-        document.addEventListener('mousedown', handleClickOutside);
+  useEffect(() => {
+    // Função para fechar o modal quando clicar fora dele
+    const handleClickOutside = (event) => {
+      const modalContainer = document.getElementById('modal');
+      const buttons = document.getElementById('buttons');
 
-        // Remove o listener ao desmontar o componente
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [handleModal]);
+      // Verifica se o clique foi fora do modal
+      if (modalContainer && !modalContainer.contains(event.target) && !buttons.contains(event.target)) {
+        handleModal(false);
+      }
+    };
 
-    return (
+    document.addEventListener('mousedown', handleClickOutside);
 
-        <div id="modalContainer">
+    // Remove o listener ao desmontar o componente
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [handleModal]);
 
-            <div id='modal' className="modal">
+  return (
 
-                <img src={require('./images/' + modalInfos.type + '.svg')} alt="" />
+    <div id="modalContainer">
 
-                {modalInfos.text}
+      <div id='modal' className="modal">
 
-                <div id='buttons' className="buttons">
+        <img src={require('./images/' + modalInfos.type + '.svg')} alt="" />
 
-                    {
-                        modalInfos.type === 'confirmation' ?
-                            <button onClick={() => modalInfos.confirmation()}>
-                                <p>Confirmar</p>
-                            </button>
-                            :
-                            <button
-                                onClick={() => handleModal(false)}
-                                className={modalInfos.type === 'confirmation' ? 'confirmationButton' : ''}>
-                                <p>Fechar</p>
-                            </button>
-                    }
-                    {
-                        modalInfos.type === 'confirmation' &&
-                        <button
-                            onClick={() => handleModal(false)}>
-                            <p>Cancelar</p>
-                        </button>
-                    }
-                </div>
+        {modalInfos.text}
 
-            </div>
+        <div id='buttons' className="buttons">
 
+          {
+            modalInfos.type === 'confirmation' ?
+              <button onClick={() => modalInfos.confirmation()}>
+                <p>Confirmar</p>
+              </button>
+              :
+              <button
+                onClick={() => handleModal(false)}
+                className={modalInfos.type === 'confirmation' ? 'confirmationButton' : ''}>
+                <p>Fechar</p>
+              </button>
+          }
+          {
+            modalInfos.type === 'confirmation' &&
+            <button
+              onClick={() => handleModal(false)}>
+              <p>Cancelar</p>
+            </button>
+          }
         </div>
-    )
+
+      </div>
+
+    </div>
+  )
 }

@@ -35,7 +35,23 @@ const YourComponent = () => {
 
 ### Opening Modals
 
-Use the `handleModal` function to open different types of modals:
+Create the state of modal and use the `handleModal` function to open different types of modals:
+```javascript
+const [modalInfos, setModalInfos] = useState({});
+
+function handleModal(handle, type, text, description, confirmation) {
+  if (handle) {
+    setModalInfos({
+      type: type,
+      text: <p>{text}{<span>{description}</span>}</p>,
+      confirmation: confirmation,
+    })
+  } else {
+    setModalInfos({})
+  }
+}
+```
+
 
 ```javascript
 const YourComponent = () => {
