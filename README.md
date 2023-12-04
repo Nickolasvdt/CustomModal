@@ -43,7 +43,7 @@ function handleModal(handle, type, text, description, confirmation) {
   if (handle) {
     setModalInfos({
       type: type,
-      text: <p>{text}{<span>{description}</span>}</p>,
+      text: <p>{text}<span>{description}</span></p>,
       confirmation: confirmation,
     })
   } else {
