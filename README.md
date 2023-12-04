@@ -89,13 +89,17 @@ const YourComponent = () => {
     <div>
       {/* ... other JSX */}
       
-      <CustomModal modalInfos={modalInfos} handleModal={handleModal} />
+      {
+        modalInfos.type &&
+        <CustomModal modalInfos={modalInfos} handleModal={handleModal} />
+      }
 
       {/* ... other JSX */}
     </div>
   );
 };
 ```
+Obs: Customize your render condition in the same way as it was used in this way -> ```modalInfos.type &&```
 
 Now, when you call `handleModal` with different parameters, the modal will dynamically change its content and behavior.
 
